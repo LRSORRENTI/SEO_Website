@@ -2,15 +2,38 @@
 
 import Button from "@/components/Button";
 import starsBg from '@/assets/stars.png';
-import { motion } from "framer-motion";
-
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const Hero = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start']
+  });
+
+const backgroundPositionY = useTransform(
+  scrollYProgress, 
+  [0, 1],
+  [-300, 300]
+)
+
   return (
-    <section className="h-[492px] md:h-[800px]  flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]" 
+    <motion.section 
+      className="h-[492px] md:h-[800px]  flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]" 
       style={{
-      backgroundImage: `url(${starsBg.src})`
-      }}>
+      backgroundImage: `url(${starsBg.src})`,
+      backgroundPositionY,
+      }}
+      animate={{
+        backgroundPositionX: starsBg.width,
+      }}
+      transition={{
+        repeat: Infinity,
+        ease: 'linear',
+        duration: 120,
+      }}
+      >
     <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgba(140,69,255,0.5)_15%,rgba(14,0,36,0.5)_78%,transparent)]">
     </div>
 
@@ -89,6 +112,6 @@ export const Hero = () => {
             <Button>Join Waitlist</Button>
           </div>
       </div>
-  </section>
+  </motion.section>
   )
 };
