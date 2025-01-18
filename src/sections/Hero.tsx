@@ -1,5 +1,8 @@
+'use client';
+
 import Button from "@/components/Button";
 import starsBg from '@/assets/stars.png';
+import { motion } from "framer-motion";
 
 
 export const Hero = () => {
@@ -17,24 +20,63 @@ export const Hero = () => {
         {/* END OF PLANT DIV  */}
 
         {/* BELOW IS RING 1  DIV */}
-        <div className="absolute h-[344px] md:h-[580px] w-[344px] md:w-[580px] border  border-white opacity-20 rounded-full top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 ">
+        <motion.div 
+              style={{
+                translateY: '-50%',
+                translateX: '-50%'
+              }}
+              animate={{
+                rotate: '1turn',
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: 'linear'
+              }}
+               className="absolute h-[344px] md:h-[580px] w-[344px] md:w-[580px] border  border-white opacity-20 rounded-full top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 ">
           <div className="absolute h-2 w-2 left-0 bg-white rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute h-2 w-2 left-1/2 bg-white rounded-full top-0 -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute h-5 w-5 left-full border border-white  rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
           <div className="h-2 w-2 bg-white rounded-full"></div>
           </div>
-        </div>
+        </motion.div>
         {/* END OF RING 1  DIV  */}
 
         {/* START RING 2 DIV  */}
-        <div className="absolute h-[444px] md:h-[780px]  w-[444px] md:w-[780px]  rounded-full border border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed"></div>
+        <motion.div 
+                animate={{
+                  rotate: '-1turn'
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 60,
+                  ease: 'linear'
+                }}
+                style={{
+                  translateY: '-50%',
+                  translateX: '-50%'
+                }}
+                className="absolute h-[444px] md:h-[780px]  w-[444px] md:w-[780px]  rounded-full border border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed"></motion.div>
         {/* END RING 2 DIV  */}
 
         {/* START RING 3 DIV */}
-        <div className="absolute h-[544px] md:h-[980px] w-[544px] md:w-[980px] rounded-full border border-white opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <motion.div 
+             animate={{
+               rotate: '1turn'
+             }}
+             transition={{
+               repeat: Infinity,
+               duration: 60,
+               ease: 'linear'
+             }}
+             style={{
+               translateY: '-50%',
+               translateX: '-50%'
+             }}
+             className="absolute h-[544px] md:h-[980px] w-[544px] md:w-[980px] rounded-full border border-white opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute h-2 w-2 left-0 bg-white rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute h-2 w-2 left-full bg-white rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      </div>
+      </motion.div>
         {/* END RING 3 DIV  */}
 
       <div className="container relative mt-16">
