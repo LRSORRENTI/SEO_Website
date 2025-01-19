@@ -111,6 +111,40 @@ export const Features = () => {
 
   const [selectedTab, setSelectedTab] = useState(0);
 
+  const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
+  const backgroundPositionY = useMotionValue(tabs[0].backgroundPositionY);
+  const backgroundSizeX = useMotionValue(tabs[0].backgroundSizeX)
+
+  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
+  const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
+  
+  const handleSelectTab = (index: number) => {
+      setSelectedTab(index);
+
+      const animateOptions: ValueAnimationTransition = {
+        duration: 2,
+        ease: 'easeInOut'
+      }
+
+      animate(
+        backgroundSizeX,
+        [ backgroundSizeX.get(), 100, tabs[index].backgroundSizeX ],
+        animateOptions,
+      );
+
+      animate(
+        backgroundPositionX, 
+        [ backgroundPositionX.get(), tabs[index].backgroundPositionX ],
+        animateOptions,
+       )
+
+       animate(
+        backgroundPositionY,
+        [ backgroundPositionY.get(),tabs[index].backgroundPositionY ],
+        animateOptions
+       )
+  };
+
   return <section className="py-20 md:py-24">
     <div className="container">
       <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">Elevate your SEO efforts.</h2>
@@ -118,20 +152,23 @@ export const Features = () => {
         our AI-driven tool has revolutionized the way 
         businesses approach SEO.
       </p>
-      <div className="mt-10 flex flex-col lg:flex-row gap-3">
+      <div className="mt-10 flex flex-col lg:flex-row gap-3" style={{cursor: 'pointer'}}>
       {tabs.map((tab, tabIndex) => (
         <FeatureTab 
             {...tab} 
             selected={selectedTab === tabIndex}
-            onClick={() => setSelectedTab(tabIndex)} key={tab.title} 
+            onClick={() => handleSelectTab(tabIndex)} key={tab.title} 
             />
       ))} 
       </div>
       <div className="border border-white/20 p-2.5 rounded-xl mt-3">
-      <div className="aspect-video bg-cover border border-white/20 rounded-lg" style={{
+      <motion.div className="aspect-video bg-cover border border-white/20 rounded-lg" 
+      style={{
+        backgroundPosition,
+        backgroundSize,
         backgroundImage: `url(${productImage.src})`
       }}>
-      </div>
+      </motion.div>
       </div>
      </div>
   </section>;
