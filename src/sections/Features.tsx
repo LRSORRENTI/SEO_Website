@@ -102,7 +102,7 @@ const FeatureTab = (props: typeof tabs[number] & ComponentPropsWithoutRef<'div'>
         autoplay
         />
         </div>
-        <div className="font-medium">{props.title}</div>
+        <div className="font-medium text-white/70 hover:text-white transition">{props.title}</div>
         {props.isNew && <div className="text-xs rounded-full px-2 py-0.5 bg-[#8C44FF] text-black font-semibold">New</div> }
         </div>
   )
@@ -149,7 +149,8 @@ export const Features = () => {
   return <section className="py-20 md:py-24">
     <div className="container">
       <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">Elevate your SEO efforts.</h2>
-      <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto tracking-tight text-center mt-5">From small startups to large enterprises,
+      <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto tracking-tight text-center mt-5">
+        From small startups to large enterprises,
         our AI-driven tool has revolutionized the way 
         businesses approach SEO.
       </p>
