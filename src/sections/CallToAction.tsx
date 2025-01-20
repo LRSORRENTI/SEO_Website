@@ -48,7 +48,10 @@ export const CallToAction = () => {
   const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`
 
   return (
-  <section className="py-20 md:py-24" ref={sectionRef}>
+  <section 
+  id="contact"
+  className="py-20 md:py-24" 
+  ref={sectionRef}>
     <div className="container">
       <motion.div 
           ref={borderedDivRef}

@@ -80,6 +80,7 @@ const FeatureTab = (props: typeof tabs[number] & ComponentPropsWithoutRef<'div'>
 
   return (
     <div 
+     id="features"
       ref={tabRef}
       onMouseEnter={handleTabHover}
       onClick={props.onClick}

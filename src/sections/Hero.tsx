@@ -20,6 +20,7 @@ const backgroundPositionY = useTransform(
 
   return (
     <motion.section 
+      id="home"
       className="h-[492px] md:h-[800px]  flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]" 
       style={{
       backgroundImage: `url(${starsBg.src})`,
@@ -109,7 +110,7 @@ const backgroundPositionY = useTransform(
              user-friendly SEO tools
           </p>
           <div className="flex justify-center mt-5">
-            <Button>Join Waitlist</Button>
+            {/* <Button>Join Waitlist</Button> */}
           </div>
       </div>
   </motion.section>
