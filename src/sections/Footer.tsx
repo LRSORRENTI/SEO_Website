@@ -23,9 +23,15 @@ export const Footer = () => {
           </nav>
       
         <div className='flex gap-5 lg:flex-1 lg:justify-end '>
+          <div className='cursor-pointer' aria-roledescription='X.com link'>
           <XSocial     className="text-white/40 hover:text-white transition"   />
+          </div>
+          <div className='cursor-pointer' aria-roledescription='Instagram link'>
           <InstaSocial className="text-white/40 hover:text-white transition"   />
+          </div>
+          <div className='cursor-pointer' aria-roledescription='YouTube link'>
           <YTSocial    className="text-white/40 hover:text-white transition"   />
+          </div>
         </div>
         </div>
       </div>
