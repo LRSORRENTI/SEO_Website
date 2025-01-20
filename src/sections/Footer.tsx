@@ -15,17 +15,23 @@ export const Footer = () => {
         </div>
 
           <nav className='flex flex-col md:flex-row gap-5 lg:gap-7 lg:flex-1 lg:justify-center'>
-            <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Features</a>
-            <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Developers</a>
-            <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Company</a>
-            <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Blog</a>
-            <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Changelog</a>
+            <a href="#home" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Home</a>
+            <a href="#features" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Features</a>
+            <a href="#testimonials" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Testimonials</a>
+            <a href="#contact" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Contact</a>
+            {/* <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Changelog</a> */}
           </nav>
       
         <div className='flex gap-5 lg:flex-1 lg:justify-end '>
+          <div className='cursor-pointer' aria-roledescription='X.com link'>
           <XSocial     className="text-white/40 hover:text-white transition"   />
+          </div>
+          <div className='cursor-pointer' aria-roledescription='Instagram link'>
           <InstaSocial className="text-white/40 hover:text-white transition"   />
+          </div>
+          <div className='cursor-pointer' aria-roledescription='YouTube link'>
           <YTSocial    className="text-white/40 hover:text-white transition"   />
+          </div>
         </div>
         </div>
       </div>
