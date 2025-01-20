@@ -79,32 +79,33 @@ const FeatureTab = (props: typeof tabs[number] & ComponentPropsWithoutRef<'div'>
   }
 
   return (
-    <div 
-     id="features"
+    <div
+      id="features"
       ref={tabRef}
       onMouseEnter={handleTabHover}
       onClick={props.onClick}
-      className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1 relative">
+      className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1 relative group"
+    >
       {props.selected && (
-      <motion.div 
-      style={{
-        maskImage,
-      }}
-      className="absolute inset-0 -m-px border border-[#A369FF] rounded-xl ">
-      </motion.div>
+        <motion.div
+          style={{
+            maskImage,
+          }}
+          className="absolute inset-0 -m-px border border-[#A369FF] rounded-xl"
+        ></motion.div>
       )}
 
       <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex items-center justify-center">
-      <DotLottiePlayer 
-        ref={dotLottieRef}
-        src={props.icon} 
-        className="h-5 w-5"
-        autoplay
-        />
-        </div>
-        <div className="font-medium text-white/70 hover:text-white transition">{props.title}</div>
-        {props.isNew && <div className="text-xs rounded-full px-2 py-0.5 bg-[#8C44FF] text-black font-semibold">New</div> }
-        </div>
+        <DotLottiePlayer ref={dotLottieRef} src={props.icon} className="h-5 w-5" autoplay />
+      </div>
+
+      {/* Apply text color change on hover of the parent div */}
+      <div className="font-medium text-white/70 group-hover:text-white transition">{props.title}</div>
+
+      {props.isNew && (
+        <div className="text-xs rounded-full px-2 py-0.5 bg-[#8C44FF] text-black font-semibold">New</div>
+      )}
+    </div>
   )
 }
 
