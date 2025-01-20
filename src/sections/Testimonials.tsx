@@ -46,18 +46,18 @@ export const Testimonials = () => {
       </p>
       <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
       <motion.div 
-      initial={{
-        translateX: '-50%',
-      }}
-      animate={{
-        translateX: '0',
-      }}
-      transition={{
-        repeat: Infinity,
-        ease: 'linear',
-        duration: 30,
-      }}
-      className="flex gap-5 pr-5 flex-none">
+          initial={{
+            translateX: '-50%',
+          }}
+          animate={{
+            translateX: '0',
+          }}
+          transition={{
+            repeat: Infinity,
+            ease: 'linear',
+            duration: 30,
+          }}
+          className="flex gap-5 pr-5 flex-none">
       {[...testimonials, ...testimonials].map(testimonial => (
           <div
             key={testimonial.name}
